@@ -1,97 +1,89 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Be My Valentine 💖</title>
-  <style>
-    * { box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .card {
-      background: white;
-      padding: 40px;
-      border-radius: 20px;
-      text-align: center;
-      width: 90%;
-      max-width: 420px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-    }
-    h1 { color: #e63946; }
-    p { color: #555; }
-    .buttons { display: flex; gap: 20px; justify-content: center; margin: 20px 0; }
-    button {
-      padding: 12px 25px;
-      border: none;
-      border-radius: 25px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    .yes { background: #e63946; color: white; }
-    .no { background: #f1f1f1; }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin-top: 15px;
-    }
-    .gallery img {
-      width: 100%;
-      height: 90px;
-      object-fit: cover;
-      border-radius: 12px;
-      background: #ffe6ea;
-    }
-  </style>
+    <title>Be My Valentine 💖</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+            font-family: Arial, sans-serif;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            max-width: 400px;
+        }
+
+        h1 {
+            color: #e63946;
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 15px;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 12px 25px;
+            margin: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        #yesBtn {
+            background: #e63946;
+            color: white;
+        }
+
+        #noBtn {
+            background: #ddd;
+            position: relative;
+        }
+    </style>
 </head>
 <body>
 
-<div class="card" id="card">
-  <h1>Hey Chithu! 💕</h1>
-  <p>My Pretty little wife<br>Will you be my Valentine?</p>
+<div class="card">
+    <img src="photo1.jpg" alt="Our Memory">
+    <h1>Hey Chithu 💕</h1>
+    <p>Will you be my Valentine?</p>
 
-  <div class="buttons">
-    <button class="yes" onclick="sayYes()">Yes 💖</button>
-    <button class="no" onmouseover="moveNo()">No 🙈</button>
-  </div>
-
-  <div class="gallery">
-    <img src="leftPhoto.jpg" alt="Memory 1">
-    <img src="img2.jpg" alt="Memory 2">
-    <img src="img3.jpg" alt="Memory 3">
-  </div>
+    <div class="buttons">
+        <button id="yesBtn">Yes 💖</button>
+        <button id="noBtn">No 🙈</button>
+    </div>
 </div>
 
-<audio id="bgMusic" loop>
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
-
 <script>
-  function sayYes() {
-    document.getElementById('card').innerHTML =
-      "<h1>💘</h1><p>உன்னோடு நானும்
-நடக்கும் இந்தப் பாதை
-முடிவில்லா வானம் போல
-நீளட்டும் என் உயிரே
-கதை சொல்லி சிரித்துக் கொண்டு
-காற்றோடு சேர்ந்து போவோம்;
-வார்த்தைகள் தீர்ந்தாலும்
-உன் மௌனம் கூட எனக்குப் பாடலே
-கை விடாமல் இருந்தால் போதும்,
-உலகமே நமக்கொரு சிறிய கனவே🥰<br>I love you </p>";
-    document.getElementById('bgMusic').play();
-  }
-  function moveNo() {
-    const btn = document.querySelector('.no');
-    btn.style.transform = `translate(${Math.random()*200-100}px, ${Math.random()*200-100}px)`;
-  }
+    const yesBtn = document.getElementById("yesBtn");
+    const noBtn = document.getElementById("noBtn");
+
+    yesBtn.addEventListener("click", () => {
+        window.location.href = "love.html";
+    });
+
+    noBtn.addEventListener("mouseover", () => {
+        const x = Math.random() * 300 - 150;
+        const y = Math.random() * 200 - 100;
+        noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    });
 </script>
 
 </body>
