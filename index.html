@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Be My Valentine 💖</title>
+  <style>
+    * { box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      width: 90%;
+      max-width: 420px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+    h1 { color: #e63946; }
+    p { color: #555; }
+    .buttons { display: flex; gap: 20px; justify-content: center; margin: 20px 0; }
+    button {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .yes { background: #e63946; color: white; }
+    .no { background: #f1f1f1; }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 15px;
+    }
+    .gallery img {
+      width: 100%;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 12px;
+      background: #ffe6ea;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card" id="card">
+  <h1>Hey Veera 💕</h1>
+  <p>My pretty little baby<br>Do you Love me?</p>
+
+  <div class="buttons">
+    <button class="yes" onclick="sayYes()">Yes 💖</button>
+    <button class="no" onmouseover="moveNo()">No 🙈</button>
+  </div>
+
+  <div class="gallery">
+    <img src="leftPhoto.jpg" alt="Memory 1">
+    <img src="img2.jpg" alt="Memory 2">
+    <img src="img3.jpg" alt="Memory 3">
+  </div>
+</div>
+
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  function sayYes() {
+    document.getElementById('card').innerHTML =
+      "<h1>Veera 💘</h1><p>You just made my world smile 🥰<br>I love you too!</p>";
+    document.getElementById('bgMusic').play();
+  }
+  function moveNo() {
+    const btn = document.querySelector('.no');
+    btn.style.transform = `translate(${Math.random()*200-100}px, ${Math.random()*200-100}px)`;
+  }
+</script>
+
+</body>
+</html>
