@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>I Love You 💖</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .message {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            max-width: 500px;
+        }
+
+        h1 {
+            color: #e63946;
+        }
+
+        img {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 16px;
+            white-space: pre-line;
+        }
+    </style>
+</head>
+<body>
+
+<div class="message">
+    <img src="photo2.jpg" alt="Love Photo">
+
+    <h1>💘</h1>
+
+    <p>
+உன்னோடு நானும்
+நடக்கும் இந்தப் பாதை
+முடிவில்லா வானம் போல
+நீளட்டும் என் உயிரே
+கதை சொல்லி சிரித்துக் கொண்டு
+காற்றோடு சேர்ந்து போவோம்;
+வார்த்தைகள் தீர்ந்தாலும்
+உன் மௌனம் கூட எனக்குப் பாடலே
+கை விடாமல் இருந்தால் போதும்,
+உலகமே நமக்கொரு சிறிய கனவே
+    </p>
+
+    <h2>I Love You 🥰</h2>
+</div>
+
+<audio autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+    // Floating hearts animation
+    setInterval(() => {
+        const heart = document.createElement("div");
+        heart.innerHTML = "💖";
+        heart.style.position = "absolute";
+        heart.style.left = Math.random() * window.innerWidth + "px";
+        heart.style.top = "100%";
+        heart.style.fontSize = "24px";
+        heart.style.animation = "float 4s linear";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 4000);
+    }, 300);
+
+    const style = document.createElement("style");
+    style.innerHTML = `
+        @keyframes float {
+            from { transform: translateY(0); opacity: 1; }
+            to { transform: translateY(-100vh); opacity: 0; }
+        }
+    `;
+    document.head.appendChild(style);
+</script>
+
+</body>
+</html>
